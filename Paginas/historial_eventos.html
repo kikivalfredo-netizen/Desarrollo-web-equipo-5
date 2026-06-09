@@ -1,9 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../Estilos/historialeventos.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,7 +10,126 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../Estilos/style.css" />
+    <style>
+      body {
+        background-color: #f9f6f2;
+        font-family: 'Segoe UI', sans-serif;
+      }
 
+      main {
+        padding: 3rem 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      main h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 2.5rem;
+        border-left: 5px solid #2cb89a;
+        padding-left: 1rem;
+      }
+
+      .evento-card {
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        display: grid;
+        grid-template-columns: 340px 1fr;
+        margin-bottom: 2.5rem;
+        min-height: 260px;
+        transition: box-shadow 0.2s;
+      }
+
+      .evento-card:hover {
+        box-shadow: 0 6px 28px rgba(44,184,154,0.18);
+      }
+
+      .evento-card.reverse {
+        grid-template-columns: 1fr 340px;
+      }
+
+      .evento-card.reverse .evento-img {
+        order: 2;
+      }
+
+      .evento-card.reverse .evento-body {
+        order: 1;
+      }
+
+      .evento-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        min-height: 240px;
+      }
+
+      .evento-body {
+        padding: 1.8rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.8rem;
+      }
+
+      .evento-fecha {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #2cb89a;
+        background: #e6f9f5;
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 20px;
+        width: fit-content;
+      }
+
+      .evento-nombre {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+      }
+
+      .evento-desc {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      .evento-mapa {
+        border-radius: 8px;
+        overflow: hidden;
+        height: 140px;
+        border: 1px solid #e0e0e0;
+      }
+
+      .evento-mapa iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      @media (max-width: 768px) {
+        .evento-card,
+        .evento-card.reverse {
+          grid-template-columns: 1fr;
+        }
+        .evento-card.reverse .evento-img,
+        .evento-card.reverse .evento-body {
+          order: unset;
+        }
+        .evento-img {
+          min-height: 200px;
+          height: 200px;
+        }
+      }
+    </style>
     <title>Historial de Eventos</title>
   </head>
   <body>
@@ -47,46 +165,160 @@
         </ul>
       </nav>
     </header>
+
     <main>
-      <section>
-        <h1>Calendario de Eventos</h1>
-        <div class="month">
-          <ul>
-            <li class="prev">&#10094;</li>
-            <li class="next">&#10095;</li>
-            <li>Agosto<br /><span style="font-size: 18px">2026</span></li>
-          </ul>
+      <h1>Historial de Eventos</h1>
+
+      <!-- Evento 1 -->
+      <article class="evento-card">
+        <img
+          class="evento-img"
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=80"
+          alt="Cata de Cafés de Origen"
+        />
+        <div class="evento-body">
+          <span class="evento-fecha">14 de Marzo, 2026</span>
+          <h2 class="evento-nombre">Cata de Cafés de Origen</h2>
+          <p class="evento-desc">
+            Un recorrido sensorial por los perfiles de sabor de cinco orígenes distintos: Etiopía, Colombia, Guatemala, Kenia y Perú. Los participantes aprendieron a identificar notas florales, frutales y especiadas mediante la técnica de cupping profesional.
+          </p>
+          <div class="evento-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0!2d-64.1155!3d-32.1725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEwJzIxLjAiUyA2NMKwMDYnNTYuMCJX!5e0!3m2!1ses!2sar!4v1600000000000"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
+      </article>
 
-        <ul class="weekdays">
-          <li>Lunes</li>
-          <li>Martes</li>
-          <li>Miercoles</li>
-          <li>Jueves</li>
-          <li>Viernes</li>
-          <li>Sabado</li>
-          <li>Domingo</li>
-        </ul>
+      <!-- Evento 2 -->
+      <article class="evento-card reverse">
+        <img
+          class="evento-img"
+          src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=700&q=80"
+          alt="Taller de Tostado Artesanal"
+        />
+        <div class="evento-body">
+          <span class="evento-fecha">22 de Febrero, 2026</span>
+          <h2 class="evento-nombre">Taller de Tostado Artesanal</h2>
+          <p class="evento-desc">
+            Sesión práctica de introducción al tostado en pequeña escala. Los asistentes operaron una tostadora de tambor, aprendieron a leer los cambios de color y aroma, y se llevaron su propia mezcla tostada al finalizar el taller.
+          </p>
+          <div class="evento-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0!2d-64.1230!3d-32.1780!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEwJzQwLjgiUyA2NMKwMDcnMjIuOCJX!5e0!3m2!1ses!2sar!4v1600000000001"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </article>
 
-        <ul class="days">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li><span class="active">10</span></li>
-          <li>11</li>
-          ...etc
-        </ul>
-      </section>
+      <!-- Evento 3 -->
+      <article class="evento-card">
+        <img
+          class="evento-img"
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&q=80"
+          alt="Competencia de Latte Art"
+        />
+        <div class="evento-body">
+          <span class="evento-fecha">5 de Enero, 2026</span>
+          <h2 class="evento-nombre">Competencia Abierta de Latte Art</h2>
+          <p class="evento-desc">
+            Dieciséis baristas compitieron en tres rondas de arte sobre leche vaporizada, siendo evaluados por un jurado especializado. La categoría libre permitió a los participantes demostrar creatividad con diseños de hasta 60 segundos.
+          </p>
+          <div class="evento-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0!2d-64.1100!3d-32.1700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEwJzEyLjAiUyA2NMKwMDYnMzYuMCJX!5e0!3m2!1ses!2sar!4v1600000000002"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 4 -->
+      <article class="evento-card reverse">
+        <img
+          class="evento-img"
+          src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=80"
+          alt="Seminario de Métodos de Preparación"
+        />
+        <div class="evento-body">
+          <span class="evento-fecha">18 de Noviembre, 2025</span>
+          <h2 class="evento-nombre">Seminario: Métodos de Preparación</h2>
+          <p class="evento-desc">
+            Exploración comparativa de seis métodos de extracción: V60, Chemex, AeroPress, French Press, Sifón y Cold Brew. Cada estación contó con un instructor dedicado que guió a los participantes a través de los parámetros de molienda, temperatura y tiempo.
+          </p>
+          <div class="evento-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0!2d-64.1180!3d-32.1750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEwJzMwLjAiUyA2NMKwMDcnMDQuOCJX!5e0!3m2!1ses!2sar!4v1600000000003"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 5 -->
+      <article class="evento-card">
+        <img
+          class="evento-img"
+          src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700&q=80"
+          alt="Noche de Maridaje Café y Gastronomía"
+        />
+        <div class="evento-body">
+          <span class="evento-fecha">9 de Octubre, 2025</span>
+          <h2 class="evento-nombre">Noche de Maridaje: Café y Gastronomía</h2>
+          <p class="evento-desc">
+            Experiencia gastronómica en colaboración con el chef Rodrigo Suárez, en la que se exploraron combinaciones entre cafés de especialidad y preparaciones saladas y dulces. Una velada íntima de 30 personas que integró ciencia sensorial y cocina.
+          </p>
+          <div class="evento-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0!2d-64.1050!3d-32.1660!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEwJzU3LjYiUyA2NMKwMDYnMTguMCJX!5e0!3m2!1ses!2sar!4v1600000000004"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </article>
+
+      <!-- Evento 6 -->
+      <article class="evento-card reverse">
+        <img
+          class="evento-img"
+          src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=700&q=80"
+          alt="Introducción al Café de Especialidad"
+        />
+        <div class="evento-body">
+          <span class="evento-fecha">20 de Agosto, 2025</span>
+          <h2 class="evento-nombre">Introducción al Café de Especialidad</h2>
+          <p class="evento-desc">
+            Primera edición de este ciclo formativo, pensado para personas sin experiencia previa. En cuatro horas, los participantes descubrieron la diferencia entre café convencional y de especialidad, recorrieron la cadena productiva y realizaron su primera cata guiada.
+          </p>
+          <div class="evento-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0!2d-64.1200!3d-32.1800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDEwJzQ4LjAiUyA2NMKwMDcnMTIuMCJX!5e0!3m2!1ses!2sar!4v1600000000005"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </article>
+
     </main>
-    <footer>
+
+    <footer class="container-fluid bg-dark text-white">
       <p>2026 Todos los derechos reservados.</p>
     </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
