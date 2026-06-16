@@ -77,9 +77,38 @@
       <section class="container-sm" id="proximos-eventos">
         <h2 class="text-center my-5">Proximos eventos</h2>
 
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <select id="filtroZona" class="form-select">
+              <option value="">Todas las zonas</option>
+              <option value="Buenos Aires">Buenos Aires</option>
+              <option value="CABA">CABA</option>
+              <option value="Zona Sur">Zona Sur</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <select id="filtroTipo" class="form-select">
+              <option value="">Todos los tipos</option>
+              <option value="Taller">Taller</option>
+              <option value="Masterclass">Masterclass</option>
+              <option value="Cata">Cata</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <input type="date" id="filtroFecha" class="form-control" />
+          </div>
+        </div>
+
         <div class="d-flex flex-column gap-5">
           <!-- Tarjeta de evento 1 -->
-          <article class="">
+          <article
+            data-tipo="Taller"
+            data-zona="Buenos Aires"
+            data-fecha="15/07/2026"
+            class="evento"
+          >
             <div class="d-flex gap-5 align-items-center">
               <div class="d-flex flex-column gap-2">
                 <h3>Introducción al Café de Especialidad</h3>
@@ -113,7 +142,12 @@
           <hr />
 
           <!-- Tarjeta de evento 2 -->
-          <article class="">
+          <article
+            data-tipo="Masterclass"
+            data-zona="Buenos Aires"
+            data-fecha="22/08/2026"
+            class="evento"
+          >
             <div class="d-flex gap-5 align-items-center">
               <div class="d-flex flex-column gap-2">
                 <h3>Masterclass de Latte Art para Baristas</h3>
@@ -147,7 +181,12 @@
           <hr />
 
           <!-- Tarjeta de evento 3 -->
-          <article class="">
+          <article
+            data-tipo="Cata"
+            data-zona="Buenos Aires"
+            data-fecha="05/09/2026"
+            class="evento"
+          >
             <div class="d-flex gap-5 align-items-center">
               <div class="d-flex flex-column gap-2">
                 <h3>Cata Sensorial de Cafés de Latinoamérica</h3>
@@ -189,5 +228,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="../Funcionalidades/filtros.js"></script>
   </body>
 </html>
