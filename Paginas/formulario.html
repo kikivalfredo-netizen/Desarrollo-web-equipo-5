@@ -9,53 +9,94 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <script type="module" src="../Funcionalidades/form.js"></script>
     <title>Formulario</title>
   </head>
   <body class="bg-light">
-
-    <header class="container-fluid d-flex justify-content-around align-items-center py-3 bg-dark">
+    <header
+      class="container-fluid d-flex justify-content-around align-items-center py-3 bg-dark"
+    >
       <a href="index.html">
         <img src="../media/logo.png" alt="Logo" id="logo" height="60" />
       </a>
       <nav>
         <ul class="d-flex gap-4 list-unstyled m-0">
-          <li><a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="index.html">Inicio</a></li>
-          <li><a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="formulario.html">Formulario</a></li>
-          <li><a class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="historial_eventos.html">Eventos</a></li>
+          <li>
+            <a
+              class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              href="index.html"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              class="link-active link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              href="formulario.html"
+              >Formulario</a
+            >
+          </li>
+          <li>
+            <a
+              class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+              href="historial_eventos.html"
+              >Eventos</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
     <main class="d-flex justify-content-center align-items-center py-5">
-      <div class="card shadow-sm p-4" style="width: 100%; max-width: 480px;">
+      <div class="card shadow-sm p-4" style="width: 100%; max-width: 480px">
         <h4 class="mb-4 text-center fw-semibold">Registro de evento</h4>
 
-        <div class="row g-3">
-
-      <div>
-        <label for="tel">Teléfono:</label>
-        <input type="tel" id="tel" name="tel" required />
-      </div>
-
+        <form id="form" class="row g-3">
           <div class="col-6">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Juan" required />
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              name="nombre"
+              placeholder="Juan"
+              required
+            />
           </div>
-
 
           <div class="col-6">
             <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Pérez" required />
+            <input
+              type="text"
+              class="form-control"
+              id="apellido"
+              name="apellido"
+              placeholder="Pérez"
+              required
+            />
           </div>
 
           <div class="col-12">
             <label for="correo" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@dominio.com" required />
+            <input
+              type="email"
+              class="form-control"
+              id="correo"
+              name="correo"
+              placeholder="ejemplo@dominio.com"
+              required
+            />
           </div>
 
           <div class="col-12">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+54 351 000-0000" required />
+            <input
+              type="tel"
+              class="form-control"
+              id="telefono"
+              name="telefono"
+              placeholder="+54 351 000-0000"
+              required
+            />
           </div>
 
           <div class="col-12">
@@ -69,10 +110,11 @@
           </div>
 
           <div class="col-12 mt-2">
-            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+            <button type="submit" class="btn btn-dark w-100">
+              Registrarse
+            </button>
           </div>
-
-        </div>
+        </form>
       </div>
     </main>
 
@@ -87,4 +129,3 @@
     ></script>
   </body>
 </html>
-
